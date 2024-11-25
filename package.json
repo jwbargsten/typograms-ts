@@ -25,5 +25,16 @@
     "typescript-eslint": "^8.0.0",
     "vite": "^5.4.10",
     "vitest": "^2.1.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/typograms-ts.umd.cjs",
+  "module": "./dist/typograms-ts.js",
+  "exports": {
+    ".": {
+      "import": "./dist/typograms-ts.js",
+      "require": "./dist/typograms-ts.umd.cjs"
+    }
   }
 }
