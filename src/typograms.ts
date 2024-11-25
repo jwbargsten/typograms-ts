@@ -48,7 +48,13 @@ function render(diagram: Diagram) {
   return result;
 }
 
-export function create(source: string, zoom: number, debug: boolean) {
+type Opts = {
+  zoom: number,
+  debug: boolean,
+  padding: number
+}
+
+export function create(source: string, opts: Opts) {
   const diagram = source.split("\n").map((line: string) => line.trimEnd().split(""));
 
   diagram.splice(-1);
@@ -64,19 +70,19 @@ export function create(source: string, zoom: number, debug: boolean) {
     }
   }
 
-  const padding = 0;
+  const padding = opts.padding;
 
   let svg = createTag("svg", {
-    width: width * 30 * zoom,
-    height: height * 54 * zoom,
-    debug: debug,
+    width: width * 30 * opts.zoom,
+    height: height * 54 * opts.zoom,
+    debug: opts.debug,
     viewBox: `${-padding} ${-padding} ${width * 30 + 2 * padding} ${height * 54 + 2 * padding}`,
     class: "debug typograms"
   });
 
   svg.appendChild(render(diagram));
 
-  if (debug) {
+  if (opts.debug) {
     svg.appendChild(grid(width, height));
   }
 

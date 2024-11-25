@@ -49,6 +49,14 @@ You can embed typograms into pages using the JS rendering library:
 </body>
 ```
 
+Option overview:
+
+```html
+<pre data-typogram data-typogram-debug data-typogram-padding="6" data-typogram-zoom="0.3">
+...
+</pre>
+```
+
 A full example you can find [here](https://github.com/jwbargsten/typograms-ts/blob/main/example.html)
 
 A comparison with related work is available
