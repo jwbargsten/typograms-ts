@@ -72,7 +72,7 @@ export function create(source: string, zoom: number, debug: boolean) {
     height: height * 54 * zoom,
     debug: debug,
     viewBox: `${-padding} ${-padding} ${width * 30 + 2 * padding} ${height * 54 + 2 * padding}`,
-    class: "debug"
+    class: "debug typograms"
   });
 
   svg.appendChild(render(diagram));

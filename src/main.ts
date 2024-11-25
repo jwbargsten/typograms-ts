@@ -1,16 +1,18 @@
 import "./style.scss";
-import { setupCounter } from "./counter.ts";
+import { create } from "./typograms.js";
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`;
-
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+document.addEventListener("DOMContentLoaded", function () {
+  // replace all of the <script type="text/typogram"> tags
+  for (const script of document.querySelectorAll("script[type='text/typogram']")) {
+    if (script.hasAttribute("disabled")) {
+      continue;
+    }
+    const source = script.textContent;
+    const zoom = Number(script.getAttribute("zoom") || 0.3);
+    const debug = script.hasAttribute("grid");
+    if (source) {
+      const svg = create(source, zoom, debug);
+      script?.parentNode?.insertBefore(svg, script.nextSibling);
+    }
+  }
+});
