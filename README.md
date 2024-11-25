@@ -46,5 +46,7 @@ You can embed typograms into pages using the JS rendering library:
 </body>
 ```
 
+A full example you can find [here](https://github.com/jwbargsten/typograms-ts/blob/main/example.html)
+
 A comparison with related work is available
 [here](https://google.github.io/typograms/#related).
