@@ -36,8 +36,11 @@ expressive) and ergonomics (e.g. higher level tools produce diagrams faster).
 You can embed typograms into pages using the JS rendering library:
 
 ```html
+<head>
+  <link href="https://cdn.jsdelivr.net/gh/jwbargsten/typograms-ts/dist/typograms-ts.min.css" rel="stylesheet" type="text/css">
+</head>
 <body>
-  <script src="https://google.github.io/typograms/typograms.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jwbargsten/typograms-ts/dist/typograms-ts.min.js"></script>
   <pre data-typogram>
 +----+
 |    |---> My first diagram!
