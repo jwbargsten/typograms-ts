@@ -130,7 +130,7 @@ export function text(char: string, reserved: boolean) {
   return g;
 }
 
-export function around(diagram, [x, y]): [string, string, string, string, string, string, string, string] {
+export function around(diagram:string[][], [x, y]: [number, number]): [string, string, string, string, string, string, string, string] {
   let left = " ";
   let top = " ";
   let right = " ";
