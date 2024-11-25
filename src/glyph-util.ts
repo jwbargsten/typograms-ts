@@ -87,7 +87,7 @@ export function cross([top, right, bottom, left, topRight, bottomRight, bottomLe
 
 export function text(char: string, reserved: boolean) {
   const g = createTag("g");
-  const result = createTag("text");
+  const result = createTag("text", { "alignment-baseline": "central" });
   const value = document.createTextNode(char);
   result.appendChild(value);
   if (reserved) {

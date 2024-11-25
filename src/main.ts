@@ -2,17 +2,15 @@ import "./style.scss";
 import { create } from "./typograms.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  // replace all of the <script type="text/typogram"> tags
-  for (const script of document.querySelectorAll("script[type='text/typogram']")) {
-    if (script.hasAttribute("disabled")) {
+  for (const node of document.querySelectorAll("pre[data-typogram]")) {
+    if (node.hasAttribute("disabled")) {
       continue;
     }
-    const source = script.textContent;
-    const zoom = Number(script.getAttribute("zoom") || 0.3);
-    const debug = script.hasAttribute("grid");
+    const source = node.textContent;
+    const debug = node.hasAttribute("grid");
     if (source) {
-      const svg = create(source, zoom, debug);
-      script?.parentNode?.insertBefore(svg, script.nextSibling);
+      const svg = create(source, debug);
+      node?.replaceWith(svg);
     }
   }
 });

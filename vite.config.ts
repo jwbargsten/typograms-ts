@@ -24,7 +24,7 @@ export default defineConfig({
       }
     },
     cssMinify: true,
-    sourcemap: false,
+    sourcemap: true,
     lib: {
       entry: resolve(__dirname, "src/main.ts"),
       name,
