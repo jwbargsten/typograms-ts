@@ -880,24 +880,6 @@ export function arrowLeftGlyph([top, right, bottom, left, topRight, bottomRight,
   arrow.setAttribute("transform", `translate(${reach} 9) translate(0 36) rotate(180)`);
   result.appendChild(arrow);
   return result;
-  //const center = document.createElementNS(
-  //  "http://www.w3.org/2000/svg", "polygon");
-  //center "points":  "0,0 9,0 9,6 0,6",
-  //center.setAttribute("transform", "translate(9 24)");
-  //result.appendChild(center);
-  result.appendChild(
-    cross([
-      false, // top
-      ["-", "+"].includes(right), // right
-      false, // bottom
-      false, // left
-      ["/"].includes(topRight), // topRight
-      ["\\"].includes(bottomRight), // bottomRight
-      false, // bottomLeft
-      false // topLeft
-    ])
-  );
-  return result;
 }
 
 export function arrowDownGlyph([top, right, bottom, left, topRight, bottomRight, bottomLeft, topLeft]) {
