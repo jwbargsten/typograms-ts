@@ -1,11 +1,6 @@
-function createTag(tag, attrs = {}) {
-  const elem = document.createElementNS("http://www.w3.org/2000/svg", tag);
-  Object.entries(attrs).forEach(([k,v]) => elem.setAttribute(k, v))
-  return elem
-}
+import { createTag } from "./glyph-util";
 
-
-function barGlyph([top, right, bottom, left, topRight, bottomRight, bottomLeft, topLeft]) {
+function barGlyph([top, right, bottom, left, topRight, bottomRight, bottomLeft, topLeft]: [string, string, string, string,string, string, string, string]) {
   const result = createTag("g");
 
   if (right == "_") {

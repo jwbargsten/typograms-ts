@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fmt": "prettier --write .",
+    "lint": "prettier --check . && eslint .",
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/eslint": "^9.6.0",
