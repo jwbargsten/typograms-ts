@@ -18,10 +18,10 @@ export default defineConfig({
     /* }, */
     /* minify: 'terser', */
     minify: true,
-    terserOptions : {
+    terserOptions: {
       output: {
-					comments: false,
-				},
+        comments: false
+      }
     },
     cssMinify: true,
     sourcemap: false,

@@ -29,7 +29,8 @@ function render(diagram: Diagram) {
       if (char.match(/[A-Za-z0-9]/)) {
         const [, right, , left] = neighbors;
         // We special case "v", which is a down arrow, and also a text character.
-        insideQuotedText = insideQuotedText || !!left.match(/[A-Za-uw-z0-9]/) || !!right.match(/[A-Za-uw-z0-9]/);
+        insideQuotedText =
+          insideQuotedText || !!left.match(/[A-Za-uw-z0-9]/) || !!right.match(/[A-Za-uw-z0-9]/);
       }
 
       const reserved = !!glyphs[char] && !insideQuotedText;

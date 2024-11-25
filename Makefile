@@ -7,4 +7,7 @@ test:
 
 build:
 	pnpm build
+
+fmt:
+	pnpm fmt
 	
