@@ -8,14 +8,14 @@ export default defineConfig({
   },
   build: {
     /* target: "es2022", */
-    rollupOptions: {
-      output: {
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name == "style.css") return `${name}.css`;
-          return assetInfo.name;
-        }
-      }
-    },
+    /* rollupOptions: { */
+    /*   output: { */
+    /*     assetFileNames: (assetInfo) => { */
+    /*       if (assetInfo.name == "style.css") return `${name}.css`; */
+    /*       return assetInfo.name; */
+    /*     } */
+    /*   } */
+    /* }, */
     /* minify: 'terser', */
     minify: true,
     terserOptions : {
@@ -23,6 +23,7 @@ export default defineConfig({
 					comments: false,
 				},
     },
+    cssMinify: true,
     sourcemap: false,
     lib: {
       entry: resolve(__dirname, "src/main.ts"),

@@ -1,8 +1,6 @@
 import { around, createTag, grid, text } from "./glyph-util";
 import { buildGlyphs } from "./glyphs";
 
-const ratio = 2;
-
 const glyphs = buildGlyphs();
 
 type Diagram = string[][];

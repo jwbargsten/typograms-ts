@@ -1,4 +1,4 @@
-import { expect, test, describe, it , assert} from 'vitest'
+import { expect, describe, it , assert} from 'vitest'
 
 describe("typograms", () => {
   class Grid {
@@ -6,7 +6,7 @@ describe("typograms", () => {
     width: number
     height: number
 
-    constructor(str) {
+    constructor(str: string) {
       this.rows = str.split("\n");
       this.width = 0;
       for (const row of this.rows) {
@@ -17,7 +17,7 @@ describe("typograms", () => {
     size() {
       return [this.width, this.height];
     }
-    get(x, y) {
+    get(x:number, y:number) {
       if (x < 0 || x >= this.width) {
         return undefined;
       } else if (y < 0 || y >= this.height) {
@@ -29,7 +29,7 @@ describe("typograms", () => {
       }
     }
 
-    subgrid(x, y): string[][] | undefined{
+    subgrid(x: number, y: number): string[][] | undefined{
       const center = this.get(x, y);
       if (!center) {
         return undefined;
@@ -41,7 +41,7 @@ describe("typograms", () => {
       ];
     }
 
-    paint(x, y) {
+    paint(x:number, y:number) {
       const commands: string[] = [];
       const subgrid = this.subgrid(x, y);
       if(!subgrid) {
@@ -134,7 +134,7 @@ describe("typograms", () => {
     go() {
       const result: string[][] = [];
       for (let y = 0; y < this.height; y++) {
-        const row = [];
+        const row: string[] = [];
         result.push(row);
         for (let x = 0; x < this.rows[y].length; x++) {
         }

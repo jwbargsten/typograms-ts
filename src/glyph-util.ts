@@ -6,13 +6,6 @@ export function createTag(tag: string, attrs: Record<string, string | number | b
 
 export function grid(width: number, height: number) {
   const result = createTag("g");
-
-  const vertical = createTag("line", { x1: 15, y1: 0, x2: 15, y2: 54, class: "center" });
-  //result.appendChild(vertical);
-
-  const horizontal = createTag("line", { x1: 0, y1: 30, x2: 30, y2: 54, class: "center" });
-  //result.appendChild(horizontal);
-
   for (let i = 0; i <= width * 30; i += 3) {
     const line = createTag("line", {
       x1: i,
@@ -69,28 +62,9 @@ export function cross([top, right, bottom, left, topRight, bottomRight, bottomLe
     result.appendChild(line);
   }
 
-  const diagonal = createTag("polygon", {
-    points: [
-      [0, 0],
-      [20.6, 0],
-      [20.6, 3],
-      [0, 3]
-    ]
-      .map(([x, y]) => `${x},${y}`)
-      .join(" ")
-  });
-
   if (topRight) {
     const line = createTag("line", { x1: 30, y1: 0, x2: 15, y2: 27, class: "part" });
-    // line.setAttribute("transform", "scale(1, 1)");
-    // line.setAttribute("clip-path", "polygon(-6 -6, 15 -6, 15 30, -6 30)");
-    // line "stroke-linecap":  "square !important",
     result.appendChild(line);
-    //const mask = document.createElementNS(
-    //  "http://www.w3.org/2000/svg", "polygon");
-    //mask "points":  "0 0, 15 0, 15 18, 0 18",
-    //result.appendChild(mask);
-    //console.log("hi");
   }
 
   if (bottomRight) {
@@ -114,8 +88,6 @@ export function cross([top, right, bottom, left, topRight, bottomRight, bottomLe
 export function text(char: string, reserved: boolean) {
   const g = createTag("g");
   const result = createTag("text");
-  //result "xml:space":  "preserve",
-  //result.setAttributeNS("http://www.w3.org/XML/1998/namespace", "xml:space", "preserve");
   const value = document.createTextNode(char);
   result.appendChild(value);
   if (reserved) {
@@ -130,7 +102,10 @@ export function text(char: string, reserved: boolean) {
   return g;
 }
 
-export function around(diagram:string[][], [x, y]: [number, number]): [string, string, string, string, string, string, string, string] {
+export function around(
+  diagram: string[][],
+  [x, y]: [number, number]
+): [string, string, string, string, string, string, string, string] {
   let left = " ";
   let top = " ";
   let right = " ";
