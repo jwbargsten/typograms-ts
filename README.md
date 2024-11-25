@@ -13,6 +13,7 @@ Most prominent changes
 - `<pre data-typograms>...</pre>` is used (instead `<script type="text/typogram">`)
   (google/typograms#9)
 - Fixed "Text is misplaced & cut off in Firefox" (google/typograms#5)
+- reduced file size to 15kb (before 24kb)
 
 ## Overview
 

@@ -1,5 +1,5 @@
 {
-  "name": "typograms",
+  "name": "typograms-ts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@types/eslint": "^9.6.0",
+    "@types/node": "^22.9.3",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.12.0",

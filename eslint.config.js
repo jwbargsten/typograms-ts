@@ -14,6 +14,9 @@ export default ts.config(
       }
     }
   },
+  env: {
+   "node": true
+  },
   {
     ignores: ["build/", "dist/"]
   }

@@ -1,22 +1,18 @@
 import { resolve } from "path";
 import { defineConfig } from "vitest/config";
 
-const name = "typograms";
+const name = "typograms-ts";
 export default defineConfig({
   test: {
     include: ["src/**/*.{test,spec}.{js,ts}"]
   },
   build: {
-    /* target: "es2022", */
-    /* rollupOptions: { */
-    /*   output: { */
-    /*     assetFileNames: (assetInfo) => { */
-    /*       if (assetInfo.name == "style.css") return `${name}.css`; */
-    /*       return assetInfo.name; */
-    /*     } */
-    /*   } */
-    /* }, */
-    /* minify: 'terser', */
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) =>
+          assetInfo.name == "style.css" ? `${name}.css` : assetInfo.name
+      }
+    },
     minify: true,
     terserOptions: {
       output: {
