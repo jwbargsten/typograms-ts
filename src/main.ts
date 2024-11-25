@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
       continue;
     }
     const source = node.textContent;
+    const zoom = Number(node.getAttribute("zoom") || 0.3);
     const debug = node.hasAttribute("grid");
     if (source) {
-      const svg = create(source, debug);
+      const svg = create(source, zoom, debug);
       node?.replaceWith(svg);
     }
   }

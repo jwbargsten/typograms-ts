@@ -48,7 +48,7 @@ function render(diagram: Diagram) {
   return result;
 }
 
-export function create(source: string, debug: boolean) {
+export function create(source: string, zoom: number, debug: boolean) {
   const diagram = source.split("\n").map((line: string) => line.trimEnd().split(""));
 
   diagram.splice(-1);
@@ -67,8 +67,10 @@ export function create(source: string, debug: boolean) {
   const padding = 0;
 
   let svg = createTag("svg", {
+    width: width * 30 * zoom,
+    height: height * 54 * zoom,
     debug: debug,
-    viewBox: `${-padding} ${-padding} ${width * 30 + 2 * padding} ${height * 48 + 2 * padding}`,
+    viewBox: `${-padding} ${-padding} ${width * 30 + 2 * padding} ${height * 54 + 2 * padding}`,
     class: "debug typograms"
   });
 
