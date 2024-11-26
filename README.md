@@ -1,4 +1,4 @@
-# typograms TS
+# Typograms TS
 
 **This is a fork of [Typograms](https://github.com/google/typograms).**
 
@@ -10,7 +10,7 @@ I hope this setup is more inviting for code contributions.
 Most prominent changes
 
 - css is supplied separately (makes it possible to have custom styling)
-- `<pre data-typograms>...</pre>` is used (instead `<script type="text/typogram">`)
+- `<pre data-typograms>...</pre>` can be used (instead of `<script type="text/typogram">`)
   (google/typograms#9)
 - Fixed "Text is misplaced & cut off in Firefox" (google/typograms#5)
 - reduced file size to 15kb (before 24kb)
