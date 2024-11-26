@@ -15,4 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
       node?.replaceWith(svg);
     }
   }
+  // stay backwards compatible
+  // replace all of the <script type="text/typogram"> tags
+  for (const script of document.querySelectorAll("script[type='text/typogram']")) {
+    if (script.hasAttribute("disabled")) {
+      continue;
+    }
+    const source = script.textContent;
+    const zoom = Number(script.getAttribute("zoom") || 0.3);
+    const padding = Number(script.getAttribute("padding") || 0);
+    const debug = script.hasAttribute("grid");
+    if (source) {
+      const svg = create(source, { zoom, debug, padding });
+      script?.parentNode?.insertBefore(svg, script.nextSibling);
+    }
+  }
 });

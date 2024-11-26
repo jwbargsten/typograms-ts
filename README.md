@@ -59,5 +59,33 @@ Option overview:
 
 A full example you can find [here](https://github.com/jwbargsten/typograms-ts/blob/main/example.html)
 
+## Backwards compatibility
+
+You can still use the old syntax from the original Typograms
+
+```html
+<head>
+  <link href="https://cdn.jsdelivr.net/gh/jwbargsten/typograms-ts/dist/typograms-ts.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/gh/jwbargsten/typograms-ts/dist/typograms-ts.min.js"></script>
+  <script type="text/typogram">
++----+
+|    |---> My first diagram!
++----+
+  </script>
+</body>
+```
+
+Option overview:
+
+```html
+<script type="text/typogram" padding="0" zoom="0.3" disabled grid>
+...
+</script>
+```
+
+## See also
+
 A comparison with related work is available
 [here](https://google.github.io/typograms/#related).

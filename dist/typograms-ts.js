@@ -1,38 +1,38 @@
-function i(e, l = {}) {
-  const t = document.createElementNS("http://www.w3.org/2000/svg", e);
-  return Object.entries(l).forEach(([n, r]) => t.setAttribute(n, `${r}`)), t;
+function i(n, e = {}) {
+  const t = document.createElementNS("http://www.w3.org/2000/svg", n);
+  return Object.entries(e).forEach(([l, c]) => t.setAttribute(l, `${c}`)), t;
 }
-function M(e, l) {
+function w(n, e) {
   const t = i("g");
-  for (let n = 0; n <= e * 30; n += 3) {
-    const r = i("line", {
-      x1: n,
+  for (let l = 0; l <= n * 30; l += 3) {
+    const c = i("line", {
+      x1: l,
       y1: 0,
-      x2: n,
-      y2: 54 * l,
+      x2: l,
+      y2: 54 * e,
       class: "grid"
     });
-    t.appendChild(r);
+    t.appendChild(c);
   }
-  for (let n = 0; n <= l * 54; n += 3) {
-    const r = i("line", {
+  for (let l = 0; l <= e * 54; l += 3) {
+    const c = i("line", {
       x1: 0,
-      y1: n,
-      x2: 30 * e,
-      y2: n,
+      y1: l,
+      x2: 30 * n,
+      y2: l,
       class: "grid"
     });
-    t.appendChild(r);
+    t.appendChild(c);
   }
   return t;
 }
-function o([e, l, t, n, r, c, p, f]) {
+function f([n, e, t, l, c, r, p, o]) {
   const a = i("g");
-  if (e) {
+  if (n) {
     const s = i("line", { x1: 15, y1: 0, x2: 15, y2: 27, class: "part" });
     a.appendChild(s);
   }
-  if (l) {
+  if (e) {
     const s = i("line", { x1: 15, y1: 27, x2: 30, y2: 27, class: "part" });
     a.appendChild(s);
   }
@@ -40,15 +40,15 @@ function o([e, l, t, n, r, c, p, f]) {
     const s = i("line", { x1: 15, y1: 27, x2: 15, y2: 54, class: "part" });
     a.appendChild(s);
   }
-  if (n) {
+  if (l) {
     const s = i("line", { x1: 0, y1: 27, x2: 15, y2: 27, class: "part" });
     a.appendChild(s);
   }
-  if (r) {
+  if (c) {
     const s = i("line", { x1: 30, y1: 0, x2: 15, y2: 27, class: "part" });
     a.appendChild(s);
   }
-  if (c) {
+  if (r) {
     const s = i("line", { x1: 15, y1: 27, x2: 30, y2: 54, class: "part" });
     a.appendChild(s);
   }
@@ -56,71 +56,71 @@ function o([e, l, t, n, r, c, p, f]) {
     const s = i("line", { x1: 15, y1: 27, x2: 0, y2: 54, class: "part" });
     a.appendChild(s);
   }
-  if (f) {
+  if (o) {
     const s = i("line", { x1: 0, y1: 0, x2: 15, y2: 27, class: "part" });
     a.appendChild(s);
   }
   return a;
 }
-function $(e, l) {
-  const t = i("g"), n = i("text", { "dominant-baseline": "central" }), r = document.createTextNode(e);
-  n.appendChild(r), l && n.setAttribute("class", "reserved");
-  const c = [
+function $(n, e) {
+  const t = i("g"), l = i("text", { "dominant-baseline": "central" }), c = document.createTextNode(n);
+  l.appendChild(c), e && l.setAttribute("class", "reserved");
+  const r = [
     [15, 24]
     //[1.5, 1.5 * ratio]
   ];
-  return n.setAttribute("transform", c.map(([p, f]) => `translate(${p}, ${f})`).join(" ")), t.appendChild(n), t;
+  return l.setAttribute("transform", r.map(([p, o]) => `translate(${p}, ${o})`).join(" ")), t.appendChild(l), t;
 }
-function w(e, [l, t]) {
-  let n = " ", r = " ", c = " ", p = " ", f = " ", a = " ", s = " ", d = " ";
-  return t > 0 && (r = e[t - 1][l] || " "), l < e[t].length - 1 && (c = e[t][l + 1] || " "), t < e.length - 1 && (p = e[t + 1][l] || " "), l > 0 && (n = e[t][l - 1] || " "), t > 0 && l < e[t - 1].length - 1 && (f = e[t - 1][l + 1] || " "), t + 1 < e.length && l < e[t + 1].length && (a = e[t + 1][l + 1] || " "), t < e.length - 1 && l > 0 && (s = e[t + 1][l - 1] || " "), t > 0 && l > 0 && (d = e[t - 1][l - 1] || " "), [r, c, p, n, f, a, s, d];
+function G(n, [e, t]) {
+  let l = " ", c = " ", r = " ", p = " ", o = " ", a = " ", s = " ", d = " ";
+  return t > 0 && (c = n[t - 1][e] || " "), e < n[t].length - 1 && (r = n[t][e + 1] || " "), t < n.length - 1 && (p = n[t + 1][e] || " "), e > 0 && (l = n[t][e - 1] || " "), t > 0 && e < n[t - 1].length - 1 && (o = n[t - 1][e + 1] || " "), t + 1 < n.length && e < n[t + 1].length && (a = n[t + 1][e + 1] || " "), t < n.length - 1 && e > 0 && (s = n[t + 1][e - 1] || " "), t > 0 && e > 0 && (d = n[t - 1][e - 1] || " "), [c, r, p, l, o, a, s, d];
 }
-function G([, e, , l, t, n, r, c]) {
+function m([, n, , e, t, l, c, r]) {
   const p = i("g");
-  if (e == "_") {
-    const f = i("line", { x1: "18", y1: "51", x2: "30", y2: "51", class: "part" });
-    p.appendChild(f);
+  if (n == "_") {
+    const o = i("line", { x1: "18", y1: "51", x2: "30", y2: "51", class: "part" });
+    p.appendChild(o);
   }
-  if (l == "_") {
-    const f = i("line", { x1: "0", y1: "51", x2: "12", y2: "51", class: "part" });
-    p.appendChild(f);
+  if (e == "_") {
+    const o = i("line", { x1: "0", y1: "51", x2: "12", y2: "51", class: "part" });
+    p.appendChild(o);
   }
   if (t == "_") {
-    const f = i("line", { x1: "12", y1: "-3", x2: "30", y2: "-3", class: "part" });
-    p.appendChild(f);
+    const o = i("line", { x1: "12", y1: "-3", x2: "30", y2: "-3", class: "part" });
+    p.appendChild(o);
   }
-  if (c == "_") {
-    const f = i("line", { x1: "0", y1: "-3", x2: "18", y2: "-3", class: "part" });
-    p.appendChild(f);
+  if (r == "_") {
+    const o = i("line", { x1: "0", y1: "-3", x2: "18", y2: "-3", class: "part" });
+    p.appendChild(o);
   }
   return p.appendChild(
-    o([
-      !(t == "/" && c == "\\"),
+    f([
+      !(t == "/" && r == "\\"),
       // top
-      ["-"].includes(e),
+      ["-"].includes(n),
       // right
-      !(r == "/" && n == "\\"),
+      !(c == "/" && l == "\\"),
       // bottom
-      ["-"].includes(l),
+      ["-"].includes(e),
       // left
       t == "/",
       // topRight
-      n == "\\",
+      l == "\\",
       // bottomRight
-      r == "/",
+      c == "/",
       // bottomLeft
-      c == "\\"
+      r == "\\"
       // topLeft
     ])
   ), p;
 }
-function Z([e, , l, , , , ,]) {
-  return o([
-    ["|"].includes(e),
+function M([n, , e, , , , ,]) {
+  return f([
+    ["|"].includes(n),
     // top
     !0,
     // right
-    ["|"].includes(l),
+    ["|"].includes(e),
     // bottom
     !0,
     // left
@@ -135,17 +135,17 @@ function Z([e, , l, , , , ,]) {
   ]);
 }
 function v() {
-  const e = i("g"), l = i("line", { x1: "9", y1: "27", x2: "24", y2: "27", class: "part" });
-  return e.appendChild(l), e;
+  const n = i("g"), e = i("line", { x1: "9", y1: "27", x2: "24", y2: "27", class: "part" });
+  return n.appendChild(e), n;
 }
-function b(e) {
-  const l = Z(e);
-  return l.setAttribute("transform", "translate(0 24)"), l;
+function x(n) {
+  const e = M(n);
+  return e.setAttribute("transform", "translate(0 24)"), e;
 }
-function m([e, , l]) {
+function z([n, , e]) {
   const t = i("g");
   {
-    const n = i("line", {
+    const l = i("line", {
       x1: "15",
       y1: "0",
       x2: "15",
@@ -153,33 +153,33 @@ function m([e, , l]) {
       class: "part",
       style: "stroke-dasharray: 15; stroke-dashoffset: 0;"
     });
-    t.appendChild(n);
+    t.appendChild(l);
+  }
+  if (n == "+") {
+    const l = i("line", { x1: "15", y1: "-24", x2: "15", y2: "-15", class: "part" });
+    t.appendChild(l);
   }
   if (e == "+") {
-    const n = i("line", { x1: "15", y1: "-24", x2: "15", y2: "-15", class: "part" });
-    t.appendChild(n);
-  }
-  if (l == "+") {
-    const n = i("line", { x1: "15", y1: "60", x2: "15", y2: "78", class: "part" });
-    t.appendChild(n);
+    const l = i("line", { x1: "15", y1: "60", x2: "15", y2: "78", class: "part" });
+    t.appendChild(l);
   }
   return t;
 }
 function k() {
-  const e = i("g"), l = i("line", { x1: "0", y1: "21", x2: "30", y2: "21", class: "part" });
-  e.appendChild(l);
+  const n = i("g"), e = i("line", { x1: "0", y1: "21", x2: "30", y2: "21", class: "part" });
+  n.appendChild(e);
   const t = i("line", { x1: "0", y1: "30", x2: "30", y2: "30", class: "part" });
-  return e.appendChild(t), e;
+  return n.appendChild(t), n;
 }
 function _([
-  e,
-  l,
-  t,
   n,
-  r,
+  e,
+  t,
+  l,
   c,
+  r,
   p,
-  f
+  o
 ]) {
   const a = i("g"), s = i("circle", {
     cx: "0",
@@ -189,27 +189,27 @@ function _([
     transform: "translate(15, 27)"
   });
   return a.appendChild(s), a.appendChild(
-    o([
-      ["+", "|"].includes(e),
-      ["+", "-"].includes(l),
+    f([
+      ["+", "|"].includes(n),
+      ["+", "-"].includes(e),
       ["+", "|"].includes(t),
-      ["+", "-"].includes(n),
-      ["/"].includes(r),
-      ["\\"].includes(c),
+      ["+", "-"].includes(l),
+      ["/"].includes(c),
+      ["\\"].includes(r),
       ["/"].includes(p),
-      ["\\"].includes(f)
+      ["\\"].includes(o)
     ])
   ), a;
 }
-function z([
-  e,
-  l,
-  t,
+function N([
   n,
-  r,
+  e,
+  t,
+  l,
   c,
+  r,
   p,
-  f
+  o
 ]) {
   const a = i("g"), s = i("circle", {
     cx: "0",
@@ -221,15 +221,15 @@ function z([
     transform: "translate(15, 27)"
   });
   a.appendChild(s);
-  const d = o([
-    ["+", "|"].includes(e),
-    ["+", "-"].includes(l),
+  const d = f([
+    ["+", "|"].includes(n),
+    ["+", "-"].includes(e),
     ["+", "|"].includes(t),
-    ["+", "-"].includes(n),
-    ["/"].includes(r),
-    ["\\"].includes(c),
+    ["+", "-"].includes(l),
+    ["/"].includes(c),
+    ["\\"].includes(r),
     ["/"].includes(p),
-    ["\\"].includes(f)
+    ["\\"].includes(o)
   ]);
   a.appendChild(d);
   const g = i("circle", {
@@ -242,15 +242,15 @@ function z([
   });
   return a.appendChild(g), a;
 }
-function E(e) {
-  const [l, t, n, r] = e, c = i("g");
-  if (c.appendChild(
-    o([
-      ["|"].includes(l),
+function E(n) {
+  const [e, t, l, c] = n, r = i("g");
+  if (r.appendChild(
+    f([
+      ["|"].includes(e),
       // top
       !1,
       // right
-      ["|"].includes(n),
+      ["|"].includes(l),
       // bottom
       !1,
       // left
@@ -264,7 +264,7 @@ function E(e) {
       // topLeft
     ])
   ), t == "\\") {
-    const p = o([
+    const p = f([
       !1,
       !1,
       !1,
@@ -275,10 +275,10 @@ function E(e) {
       // bottomLeft
       !1
     ]);
-    p.setAttribute("transform", "translate(30 -54)"), p.setAttribute("clip-path", "polygon(-3 0, 0 0, 0 54, -3 54)"), c.appendChild(p);
+    p.setAttribute("transform", "translate(30 -54)"), p.setAttribute("clip-path", "polygon(-3 0, 0 0, 0 54, -3 54)"), r.appendChild(p);
   }
-  if (r == "\\") {
-    const p = o([
+  if (c == "\\") {
+    const p = f([
       !1,
       !1,
       !1,
@@ -290,23 +290,23 @@ function E(e) {
       // bottomLeft
       !1
     ]);
-    p.setAttribute("transform", "translate(-30 54)"), p.setAttribute("clip-path", "polygon(15 -6, 33 -6, 33 6, 15 6)"), c.appendChild(p);
+    p.setAttribute("transform", "translate(-30 54)"), p.setAttribute("clip-path", "polygon(15 -6, 33 -6, 33 6, 15 6)"), r.appendChild(p);
   }
   if (t == "_") {
-    const p = b(e);
-    c.appendChild(p);
+    const p = x(n);
+    r.appendChild(p);
   }
-  return c;
+  return r;
 }
-function j(e) {
-  const [l, t, n, r] = e, c = i("g");
-  if (c.appendChild(
-    o([
-      ["|"].includes(l),
+function j(n) {
+  const [e, t, l, c] = n, r = i("g");
+  if (r.appendChild(
+    f([
+      ["|"].includes(e),
       // top
       !1,
       // right
-      ["|"].includes(n),
+      ["|"].includes(l),
       // bottom
       !1,
       // left
@@ -319,8 +319,8 @@ function j(e) {
       !0
       // topLeft
     ])
-  ), r == "/") {
-    const p = o([
+  ), c == "/") {
+    const p = f([
       !1,
       !1,
       !1,
@@ -331,27 +331,27 @@ function j(e) {
       !1,
       !1
     ]);
-    p.setAttribute("transform", "translate(-30 -54)"), p.setAttribute("clip-path", "polygon(15 0, 30 0, 30 54, 15 54)"), c.appendChild(p);
+    p.setAttribute("transform", "translate(-30 -54)"), p.setAttribute("clip-path", "polygon(15 0, 30 0, 30 54, 15 54)"), r.appendChild(p);
   }
   if (t == "/") {
-    const p = o([!1, !1, !1, !1, !1, !1, !1, !0]);
-    p.setAttribute("transform", "translate(30 54)"), p.setAttribute("clip-path", "polygon(-3 0, 0 0, 0 6, -3 6)"), c.appendChild(p);
+    const p = f([!1, !1, !1, !1, !1, !1, !1, !0]);
+    p.setAttribute("transform", "translate(30 54)"), p.setAttribute("clip-path", "polygon(-3 0, 0 0, 0 6, -3 6)"), r.appendChild(p);
   }
-  if (r == "_") {
-    const p = b(e);
-    c.appendChild(p);
+  if (c == "_") {
+    const p = x(n);
+    r.appendChild(p);
   }
-  return c;
+  return r;
 }
-function N([
-  e,
-  l,
-  t,
+function S([
   n,
-  r,
+  e,
+  t,
+  l,
   c,
+  r,
   p,
-  f
+  o
 ]) {
   const a = i("g"), s = i("polygon"), d = [
     [0, 0],
@@ -359,39 +359,39 @@ function N([
     [42, 42],
     [0, 42]
   ];
-  return s.setAttribute("points", d.map(([g, x]) => `${g},${x}`).join(" ")), s.setAttribute("transform", "translate(-6, 6)"), a.appendChild(s), a.appendChild(
-    o([
-      ["+", "|"].includes(e),
-      ["+", "-"].includes(l),
+  return s.setAttribute("points", d.map(([g, b]) => `${g},${b}`).join(" ")), s.setAttribute("transform", "translate(-6, 6)"), a.appendChild(s), a.appendChild(
+    f([
+      ["+", "|"].includes(n),
+      ["+", "-"].includes(e),
       ["+", "|"].includes(t),
-      ["+", "-"].includes(n),
-      ["/"].includes(r),
-      ["\\"].includes(c),
+      ["+", "-"].includes(l),
+      ["/"].includes(c),
+      ["\\"].includes(r),
       ["/"].includes(p),
-      ["\\"].includes(f)
+      ["\\"].includes(o)
     ])
   ), a;
 }
-function O([
-  e,
-  l,
-  t,
+function q([
   n,
-  r,
+  e,
+  t,
+  l,
   c,
+  r,
   p,
-  f
+  o
 ]) {
-  const a = i("g"), s = ["*", "#", "-", "+", "~", ">", ".", "'", "`"].includes(l), d = ["*", "#", "-", "+", "~", "<", ".", "'", "`"].includes(n), g = ["*", "#", "|", "+", ".", "`", "^"].includes(e), x = ["*", "#", "|", "+", "'", "`", "v"].includes(t), h = ["/", "*", "#"].includes(r), C = ["\\", "*", "#"].includes(c), A = ["\\", "*", "#"].includes(f), y = ["/", "*", "#"].includes(p);
-  if (a.appendChild(o([g, s, x, d, h, C, y, A])), (d || s) && (x || g)) {
+  const a = i("g"), s = ["*", "#", "-", "+", "~", ">", ".", "'", "`"].includes(e), d = ["*", "#", "-", "+", "~", "<", ".", "'", "`"].includes(l), g = ["*", "#", "|", "+", ".", "`", "^"].includes(n), b = ["*", "#", "|", "+", "'", "`", "v"].includes(t), h = ["/", "*", "#"].includes(c), A = ["\\", "*", "#"].includes(r), C = ["\\", "*", "#"].includes(o), y = ["/", "*", "#"].includes(p);
+  if (a.appendChild(f([g, s, b, d, h, A, y, C])), (d || s) && (b || g)) {
     const u = i("polygon", {
       points: "0,0 6,0 6,6 0,6",
       transform: "translate(-3 -3) translate(15 27)"
     });
     a.appendChild(u);
   }
-  if (h || A) {
-    const u = o([
+  if (h || C) {
+    const u = f([
       !1,
       // top
       !1,
@@ -402,7 +402,7 @@ function O([
       // left
       !1,
       // topRight
-      A,
+      C,
       // bottomRight
       h,
       // bottomLeft
@@ -411,8 +411,8 @@ function O([
     ]);
     u.setAttribute("clip-path", "polygon(0 -3, 30 -3, 30 0, 0 0)"), a.appendChild(u);
   }
-  if (C || y) {
-    const u = o([
+  if (A || y) {
+    const u = f([
       !1,
       // top
       !1,
@@ -427,13 +427,13 @@ function O([
       // bottomRight
       !1,
       // bottomLeft
-      C
+      A
       // topLeft
     ]);
     u.setAttribute("clip-path", "polygon(0 27, 15 27, 15 30, 0 30)"), a.appendChild(u);
   }
-  if (y || A) {
-    const u = o([
+  if (y || C) {
+    const u = f([
       !1,
       // top
       !1,
@@ -442,9 +442,9 @@ function O([
       // bottom
       !1,
       // left
-      y && C,
+      y && A,
       // topRight
-      A && h,
+      C && h,
       // bottomRight
       !1,
       // bottomLeft
@@ -453,8 +453,8 @@ function O([
     ]);
     u.setAttribute("clip-path", "polygon(-3 0, 0 0, 0 54, -3 54)"), a.appendChild(u);
   }
-  if (C || h) {
-    const u = o([
+  if (A || h) {
+    const u = f([
       !1,
       // top
       !1,
@@ -467,15 +467,15 @@ function O([
       // topRight
       !1,
       // bottomRight
-      h && A,
+      h && C,
       // bottomLeft
-      C && y
+      A && y
       // topLeft
     ]);
     u.setAttribute("clip-path", "polygon(15 0, 30 0, 30 54, 15 54)"), a.appendChild(u);
   }
   if (s || d) {
-    const u = o([
+    const u = f([
       !1,
       // top
       !1,
@@ -486,29 +486,29 @@ function O([
       // left
       s || y,
       // topRight
-      A,
+      C,
       // bottomRight
       h,
       // bottomLeft
-      d || C
+      d || A
       // topLeft
     ]);
     u.setAttribute("clip-path", "polygon(-3 24, 30 24, 30 30, -3 30)"), a.appendChild(u);
   }
   return a;
 }
-function T([
-  e,
-  l,
-  t,
+function B([
   n,
-  r,
+  e,
+  t,
+  l,
   c,
+  r,
   p,
-  f
+  o
 ]) {
   const a = i("g");
-  if ((l == "-" || l == "+") && (t == "|" || t == "'" || t == "`" || t == "+")) {
+  if ((e == "-" || e == "+") && (t == "|" || t == "'" || t == "`" || t == "+")) {
     const s = i("path", {
       d: `
         M 30 24
@@ -521,7 +521,7 @@ function T([
     });
     a.appendChild(s);
   }
-  if ((n == "-" || n == "+") && (t == "|" || t == "'" || t == "`" || t == "+")) {
+  if ((l == "-" || l == "+") && (t == "|" || t == "'" || t == "`" || t == "+")) {
     const s = i("path", {
       d: `
         M 0 24
@@ -534,7 +534,7 @@ function T([
     });
     a.appendChild(s);
   }
-  if ((l == "-" || l == "+") && (e == "|" || e == "." || e == "+")) {
+  if ((e == "-" || e == "+") && (n == "|" || n == "." || n == "+")) {
     const s = i("path", {
       d: `
         M 30 30
@@ -547,7 +547,7 @@ function T([
     });
     a.appendChild(s);
   }
-  if ((n == "-" || n == "+") && (e == "|" || e == "." || e == "+")) {
+  if ((l == "-" || l == "+") && (n == "|" || n == "." || n == "+")) {
     const s = i("path", {
       d: `
         M 0 30
@@ -560,7 +560,7 @@ function T([
     });
     a.appendChild(s);
   }
-  if (l == "-" && r == "/") {
+  if (e == "-" && c == "/") {
     const s = i("path", {
       d: `
         M 30 30
@@ -572,7 +572,7 @@ function T([
         Z`
     });
     a.appendChild(s);
-    const d = o([
+    const d = f([
       !1,
       // top
       !1,
@@ -592,7 +592,7 @@ function T([
     ]);
     d.setAttribute("clip-path", "polygon(15px -10px, 30px -10px, 30px 30px, 2px 15px)"), a.appendChild(d);
   }
-  if (l == "-" && f == "\\") {
+  if (e == "-" && o == "\\") {
     const s = i("path", {
       d: `
         M -3 0
@@ -603,7 +603,7 @@ function T([
     });
     a.appendChild(s);
   }
-  if (n == "-" && r == "/") {
+  if (l == "-" && c == "/") {
     const s = i("path", {
       d: `
         M 0 30
@@ -614,7 +614,7 @@ function T([
     });
     a.appendChild(s);
   }
-  if (n == "-" && f == "\\") {
+  if (l == "-" && o == "\\") {
     const s = i("path", {
       d: `
         M 0 30
@@ -626,7 +626,7 @@ function T([
         Z`
     });
     a.appendChild(s);
-    const d = o([
+    const d = f([
       !1,
       // top
       !1,
@@ -646,7 +646,7 @@ function T([
     ]);
     d.setAttribute("clip-path", "polygon(-3 -3, 12 -3, 12 18, -3 18)"), a.appendChild(d);
   }
-  if (t == "|" && r == "/") {
+  if (t == "|" && c == "/") {
     const s = i("path", {
       d: `
         M 12 54
@@ -657,7 +657,7 @@ function T([
     });
     a.appendChild(s);
   }
-  if (e == "|" && c == "\\") {
+  if (n == "|" && r == "\\") {
     const s = i("path", {
       d: `
         M 30 60
@@ -668,7 +668,7 @@ function T([
     });
     a.appendChild(s);
   }
-  if (e == "|" && p == "/") {
+  if (n == "|" && p == "/") {
     const s = i("path", {
       d: `
         M 0 60
@@ -679,7 +679,7 @@ function T([
     });
     a.appendChild(s);
   }
-  if (t == "|" && f == "\\") {
+  if (t == "|" && o == "\\") {
     const s = i("path", {
       d: `
         M 12 54
@@ -690,7 +690,7 @@ function T([
     });
     a.appendChild(s);
   }
-  if (l == "-" && p == "/") {
+  if (e == "-" && p == "/") {
     const s = i("path", {
       d: `
         M 0 48
@@ -700,7 +700,7 @@ function T([
         Z`
     });
     a.appendChild(s);
-    const d = o([
+    const d = f([
       !1,
       // top
       !1,
@@ -720,7 +720,7 @@ function T([
     ]);
     d.setAttribute("clip-path", "polygon(-3 15, 12 15, 12 30, -3 30)"), a.appendChild(d);
   }
-  if (n == "-" && c == "\\") {
+  if (l == "-" && r == "\\") {
     const s = i("path", {
       d: `
         M 0 24
@@ -730,7 +730,7 @@ function T([
         Z`
     });
     a.appendChild(s);
-    const d = o([
+    const d = f([
       !1,
       // top
       !1,
@@ -750,7 +750,7 @@ function T([
     ]);
     d.setAttribute("clip-path", "polygon(-3 15, 12 15, 21 30, -3 30)"), a.appendChild(d);
   }
-  if (n == "-" && p == "/") {
+  if (l == "-" && p == "/") {
     const s = i("path", {
       d: `
         M 0 24
@@ -760,7 +760,7 @@ function T([
         Z`
     });
     a.appendChild(s);
-    const d = o([
+    const d = f([
       !1,
       // top
       !1,
@@ -780,7 +780,7 @@ function T([
     ]);
     d.setAttribute("clip-path", "polygon(-3 6, 12 6, 12 30, -3 30)"), a.appendChild(d);
   }
-  if (l == "-" && c == "\\") {
+  if (e == "-" && r == "\\") {
     const s = i("path", {
       d: `
         M 30 24
@@ -790,7 +790,7 @@ function T([
         Z`
     });
     a.appendChild(s);
-    const d = o([
+    const d = f([
       !1,
       // top
       !1,
@@ -810,7 +810,7 @@ function T([
     ]);
     d.setAttribute("clip-path", "polygon(3 6, 18 6, 18 30, 3 30)"), a.appendChild(d);
   }
-  if (p == "/" && c == "\\") {
+  if (p == "/" && r == "\\") {
     const s = i("path", {
       d: `
         M 3 42
@@ -820,7 +820,7 @@ function T([
         Z`
     });
     a.appendChild(s);
-    const d = o([
+    const d = f([
       !1,
       // top
       !1,
@@ -840,7 +840,7 @@ function T([
     ]);
     d.setAttribute("clip-path", "polygon(-3 15, 33 15, 33 30, -3 30)"), a.appendChild(d);
   }
-  if (f == "\\" && r == "/") {
+  if (o == "\\" && c == "/") {
     const s = i("path", {
       d: `
         M 3 12
@@ -850,7 +850,7 @@ function T([
         Z`
     });
     a.appendChild(s);
-    const d = o([
+    const d = f([
       !1,
       // top
       !1,
@@ -870,7 +870,7 @@ function T([
     ]);
     d.setAttribute("clip-path", "polygon(-3 -3, 33 -3, 33 12, -3 12)"), a.appendChild(d);
   }
-  if (r == "/" && c == "\\") {
+  if (c == "/" && r == "\\") {
     const s = i("path", {
       d: `
         M 22 9
@@ -880,7 +880,7 @@ function T([
         Z`
     });
     a.appendChild(s);
-    const d = o([
+    const d = f([
       !1,
       // top
       !1,
@@ -900,7 +900,7 @@ function T([
     ]);
     d.setAttribute("clip-path", "polygon(6 -3, 33 -3, 33 57, 6 57)"), a.appendChild(d);
   }
-  if (f == "\\" && p == "/") {
+  if (o == "\\" && p == "/") {
     const s = i("path", {
       d: `
         M 8 9
@@ -910,7 +910,7 @@ function T([
         Z`
     });
     a.appendChild(s);
-    const d = o([
+    const d = f([
       !1,
       // top
       !1,
@@ -932,26 +932,26 @@ function T([
   }
   return a;
 }
-function q([, e]) {
-  const l = i("g"), t = i("polygon", { points: "0,0 42,18 0,36" });
-  let n = 0;
-  return (e == "*" || e == "o" || e == "#") && (n -= 18), t.setAttribute("transform", `translate(${n} 9)`), l.appendChild(t), l;
+function O([, n]) {
+  const e = i("g"), t = i("polygon", { points: "0,0 42,18 0,36" });
+  let l = 0;
+  return (n == "*" || n == "o" || n == "#") && (l -= 18), t.setAttribute("transform", `translate(${l} 9)`), e.appendChild(t), e;
 }
-function B([, , , e]) {
-  const l = i("g"), t = i("polygon", { points: "0,0 42,18 0,36" });
-  let n = 30;
-  return (e == "*" || e == "o" || e == "#") && (n += 18), t.setAttribute("transform", `translate(${n} 9) translate(0 36) rotate(180)`), l.appendChild(t), l;
+function T([, , , n]) {
+  const e = i("g"), t = i("polygon", { points: "0,0 42,18 0,36" });
+  let l = 30;
+  return (n == "*" || n == "o" || n == "#") && (l += 18), t.setAttribute("transform", `translate(${l} 9) translate(0 36) rotate(180)`), e.appendChild(t), e;
 }
-function D([e, , l, , t, , , n]) {
-  const r = i("g"), c = i("polygon", { points: "0,0 42,18 0,36" });
+function D([n, , e, , t, , , l]) {
+  const c = i("g"), r = i("polygon", { points: "0,0 42,18 0,36" });
   let p = 36;
-  return l == " " ? p = 12 : l == "_" ? p += 18 : (l == "*" || l == "o" || l == "#") && (p -= 18), t == "/" ? c.setAttribute("transform", `translate(-36 33) rotate(${90 + 22.5}, 42, 18)`) : n == "\\" ? c.setAttribute("transform", `translate(-18 33) rotate(${90 - 22.5}, 42, 18)`) : c.setAttribute("transform", `translate(33 ${p}) rotate(90)`), r.appendChild(c), r.appendChild(
-    o([
-      ["|", "+"].includes(e),
+  return e == " " ? p = 12 : e == "_" ? p += 18 : (e == "*" || e == "o" || e == "#") && (p -= 18), t == "/" ? r.setAttribute("transform", `translate(-36 33) rotate(${90 + 22.5}, 42, 18)`) : l == "\\" ? r.setAttribute("transform", `translate(-18 33) rotate(${90 - 22.5}, 42, 18)`) : r.setAttribute("transform", `translate(33 ${p}) rotate(90)`), c.appendChild(r), c.appendChild(
+    f([
+      ["|", "+"].includes(n),
       // top
       !1,
       // right
-      ["|", "+"].includes(e),
+      ["|", "+"].includes(n),
       // bottom
       !1,
       // left
@@ -961,21 +961,21 @@ function D([e, , l, , t, , , n]) {
       // bottomRight
       !1,
       // bottomLeft
-      ["\\"].includes(n)
+      ["\\"].includes(l)
       // topLeft
     ])
-  ), r;
+  ), c;
 }
-function S([e, , l, , , t, n]) {
-  const r = i("g"), c = i("polygon", { points: "0,0 42,18 0,36" });
+function W([n, , e, , , t, l]) {
+  const c = i("g"), r = i("polygon", { points: "0,0 42,18 0,36" });
   let p = 42;
-  return e == "-" && (p -= 15), n == "/" ? c.setAttribute("transform", `translate(-18 -15) rotate(${-45 - 22.5}, 42, 18)`) : t == "\\" ? c.setAttribute("transform", `translate(-36 -15) rotate(${-90 - 22.5}, 42, 18)`) : c.setAttribute("transform", `translate(-3 ${p}) rotate(-90)`), r.appendChild(c), r.appendChild(
-    o([
+  return n == "-" && (p -= 15), l == "/" ? r.setAttribute("transform", `translate(-18 -15) rotate(${-45 - 22.5}, 42, 18)`) : t == "\\" ? r.setAttribute("transform", `translate(-36 -15) rotate(${-90 - 22.5}, 42, 18)`) : r.setAttribute("transform", `translate(-3 ${p}) rotate(-90)`), c.appendChild(r), c.appendChild(
+    f([
       !1,
       // top
       !1,
       // right
-      ["+", "|"].includes(l),
+      ["+", "|"].includes(e),
       // bottom
       !1,
       // left
@@ -983,32 +983,32 @@ function S([e, , l, , , t, n]) {
       // topRight
       ["\\"].includes(t),
       // bottomRight
-      ["/"].includes(n),
+      ["/"].includes(l),
       // bottomLeft
       !1
       // topLeft
     ])
-  ), r;
+  ), c;
 }
-function Q() {
-  let e = {
-    "|": G,
-    "-": Z,
+function I() {
+  let n = {
+    "|": m,
+    "-": M,
     "~": v,
-    _: b,
-    ":": m,
+    _: x,
+    ":": z,
     "=": k,
     "*": _,
-    o: z,
+    o: N,
     "/": E,
     "\\": j,
-    "#": N,
-    "+": O,
-    ".": T,
-    ">": q,
-    "<": B,
+    "#": S,
+    "+": q,
+    ".": B,
+    ">": O,
+    "<": T,
     v: D,
-    "^": S
+    "^": W
   };
   return Object.entries({
     "┌": "+",
@@ -1020,59 +1020,71 @@ function Q() {
     "'": ".",
     "`": ".",
     V: "v"
-  }).forEach(([t, n]) => {
-    e[t] = (r) => e[n](r);
-  }), e;
+  }).forEach(([t, l]) => {
+    n[t] = (c) => n[l](c);
+  }), n;
 }
-const L = Q();
-function V(e) {
-  const l = i("g");
-  for (let t = 0; t < e.length; t++)
-    for (let n = 0; n < e[t].length; n++) {
-      const r = e[t][n];
-      if (r == " " || r == '"')
+function Q(n, e) {
+  const t = n.length;
+  let l = 0;
+  for (; l < t && e(n[l], l); )
+    l++;
+  return n.slice(l);
+}
+const L = I();
+function V(n) {
+  const e = i("g");
+  for (let t = 0; t < n.length; t++)
+    for (let l = 0; l < n[t].length; l++) {
+      const c = n[t][l];
+      if (c == " " || c == '"')
         continue;
-      const c = i("g");
+      const r = i("g");
       let p = !1;
-      for (let s = 0; s < n; s++)
-        e[t][s] == '"' && (p = !p);
-      const f = w(e, [n, t]);
-      if (r.match(/[A-Za-z0-9]/)) {
-        const [, s, , d] = f;
+      for (let s = 0; s < l; s++)
+        n[t][s] == '"' && (p = !p);
+      const o = G(n, [l, t]);
+      if (c.match(/[A-Za-z0-9]/)) {
+        const [, s, , d] = o;
         p = p || !!d.match(/[A-Za-uw-z0-9]/) || !!s.match(/[A-Za-uw-z0-9]/);
       }
-      const a = !!L[r] && !p;
-      a && c.appendChild(L[r](f)), c.appendChild($(r, a)), c.setAttribute("transform", `translate(${n * 30} ${t * 54})`), l.appendChild(c);
+      const a = !!L[c] && !p;
+      a && r.appendChild(L[c](o)), r.appendChild($(c, a)), r.setAttribute("transform", `translate(${l * 30} ${t * 54})`), e.appendChild(r);
     }
-  return l;
+  return e;
 }
-function W(e, l) {
-  const t = e.split(`
-`).map((f) => f.trimEnd().split(""));
+function Z(n, e) {
+  const t = Q(n.split(`
+`), (a) => !a);
   t.splice(-1);
-  let n = 0;
-  const r = t.length;
-  for (let f = 0; f < t.length; f++)
-    for (let a = 0; a < t[f].length; a++)
-      t[f].length > n && (n = t[a].length);
-  const c = l.padding;
-  let p = i("svg", {
-    width: n * 30 * l.zoom,
-    height: r * 54 * l.zoom,
-    debug: l.debug,
-    viewBox: `${-c} ${-c} ${n * 30 + 2 * c} ${r * 54 + 2 * c}`,
+  const l = t.map((a) => a.trimEnd().split("")), c = l.reduce((a, s) => Math.max(a, s.length), -1 / 0), r = l.length, p = e.padding;
+  let o = i("svg", {
+    width: c * 30 * e.zoom,
+    height: r * 54 * e.zoom,
+    debug: e.debug,
+    viewBox: `${-p} ${-p} ${c * 30 + 2 * p} ${r * 54 + 2 * p}`,
     class: "debug typograms"
   });
-  return p.appendChild(V(t)), l.debug && p.appendChild(M(n, r)), p;
+  return o.appendChild(V(l)), e.debug && o.appendChild(w(c, r)), o;
 }
 document.addEventListener("DOMContentLoaded", function() {
+  var n;
   for (const e of document.querySelectorAll("pre[data-typogram]")) {
     if (e.hasAttribute("data-typogram-disabled"))
       continue;
-    const l = e.textContent, t = Number(e.getAttribute("data-typogram-zoom") || 0.3), n = Number(e.getAttribute("data-typogram-padding") || 6), r = e.hasAttribute("data-typogram-debug");
-    if (l) {
-      const c = W(l, { zoom: t, debug: r, padding: n });
-      e == null || e.replaceWith(c);
+    const t = e.textContent, l = Number(e.getAttribute("data-typogram-zoom") || 0.3), c = Number(e.getAttribute("data-typogram-padding") || 6), r = e.hasAttribute("data-typogram-debug");
+    if (t) {
+      const p = Z(t, { zoom: l, debug: r, padding: c });
+      e == null || e.replaceWith(p);
+    }
+  }
+  for (const e of document.querySelectorAll("script[type='text/typogram']")) {
+    if (e.hasAttribute("disabled"))
+      continue;
+    const t = e.textContent, l = Number(e.getAttribute("zoom") || 0.3), c = Number(e.getAttribute("padding") || 0), r = e.hasAttribute("grid");
+    if (t) {
+      const p = Z(t, { zoom: l, debug: r, padding: c });
+      (n = e == null ? void 0 : e.parentNode) == null || n.insertBefore(p, e.nextSibling);
     }
   }
 });

@@ -1,5 +1,6 @@
 import { around, createTag, grid, text } from "./glyph-util";
 import { buildGlyphs } from "./glyphs";
+import { dropWhile } from "./util";
 
 const glyphs = buildGlyphs();
 
@@ -55,20 +56,13 @@ type Opts = {
 }
 
 export function create(source: string, opts: Opts) {
-  const diagram = source.split("\n").map((line: string) => line.trimEnd().split(""));
+  const lines = dropWhile(source.split("\n"), (v) => !v)
+  lines.splice(-1);
+  
+  const diagram = lines.map((line: string) => line.trimEnd().split(""));
 
-  diagram.splice(-1);
-
-  let width = 0;
+  const width = diagram.reduce((acc: number, row: string[]) => Math.max(acc, row.length), -Infinity);
   const height = diagram.length;
-
-  for (let y = 0; y < diagram.length; y++) {
-    for (let x = 0; x < diagram[y].length; x++) {
-      if (diagram[y].length > width) {
-        width = diagram[x].length;
-      }
-    }
-  }
 
   const padding = opts.padding;
 
